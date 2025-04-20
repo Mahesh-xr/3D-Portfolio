@@ -1,12 +1,12 @@
 import React from 'react'
+import Hero from './sections/Hero'
 
 const App = () => {
   return (
-    <div className='text-xl'>
-
-        my potfolio
-      
-    </div>
+    <>
+    <Hero/>
+    </>
+    
   )
 }
 
