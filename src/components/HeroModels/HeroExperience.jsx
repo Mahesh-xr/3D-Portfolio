@@ -2,6 +2,7 @@ import { OrbitControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import React from 'react'
 import { useMediaQuery } from 'react-responsive';
+import { Room } from './Room';
 
 const HeroExperience = () => {
     const isTablet = useMediaQuery({query:'(max-width:1024px)'});
@@ -23,11 +24,16 @@ const HeroExperience = () => {
              />
 
 
+        <group 
+          scale={isMobile? 0.7 : 1}
+          position={[0, -3.5, 0]}
+          rotation={[0, -Math.PI/4, 0]}
+        >
 
-         <mesh>
-            <boxGeometry args={[1, 1, 1]}/>
-            <meshStandardMaterial color="teal"/>
-         </mesh>
+         <Room/>
+        </group>
+         
+
     </Canvas>
   )
 }
