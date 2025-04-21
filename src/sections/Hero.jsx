@@ -42,6 +42,7 @@ const Hero = () => {
                 />
             </div>
         </header>
+        {/* Right side #D model */}
      </div>
     </section>
   )
