@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
-
 import TitleHeader from "../components/TitleHeader";
 import ContactExperience from "./ContactExperience";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const formRef = useRef(null);
@@ -21,21 +21,21 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true); // Show loading state
 
-    // try {
-    //   await emailjs.sendForm(
-    //     import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-    //     import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-    //     formRef.current,
-    //     import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-    //   );
+    try {
+      await emailjs.sendForm(
+        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+      );
 
-    //   // Reset form and stop loading
-    //   setForm({ name: "", email: "", message: "" });
-    // } catch (error) {
-    //   console.error("EmailJS Error:", error); // Optional: show toast
-    // } finally {
-    //   setLoading(false); // Always stop loading, even on error
-    // }
+      // Reset form and stop loading
+      setForm({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("EmailJS Error:", error); // Optional: show toast
+    } finally {
+      setLoading(false); // Always stop loading, even on error
+    }
   };
 
   return (
