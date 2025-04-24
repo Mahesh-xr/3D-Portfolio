@@ -248,18 +248,22 @@ const navLinks = [
     {
       name: "insta",
       imgPath: "/images/insta.png",
+      href:""
     },
     {
       name: "fb",
       imgPath: "/images/fb.png",
+       href:""
     },
     {
       name: "x",
       imgPath: "/images/x.png",
+       href:""
     },
     {
       name: "linkedin",
       imgPath: "/images/linkedin.png",
+       href:""
     },
   ];
   
